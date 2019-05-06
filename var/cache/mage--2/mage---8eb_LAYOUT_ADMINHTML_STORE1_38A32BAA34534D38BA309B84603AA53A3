@@ -1,0 +1,46 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1557133779;s:6:"expire";i:9999999999;s:4:"tags";s:72:"8eb_ADMINHTML_CUSTOMERBALANCE_FORM,8eb_LAYOUT_GENERAL_CACHE_TAG,8eb_MAGE";}
+<body>
+   <referenceBlock name="customerbalance.balance">
+      <block class="Magento\CustomerBalance\Block\Adminhtml\Customer\Edit\Tab\Customerbalance\Balance\Grid" name="customer.balance.grid" as="grid">
+         <arguments>
+            <argument name="id" xsi:type="string">balanceGrid</argument>
+            <argument name="use_ajax" xsi:type="string">1</argument>
+            <argument name="default_sort" xsi:type="string">website_id</argument>
+            <argument name="pager_visibility" xsi:type="string">0</argument>
+         </arguments>
+         <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" name="customer.balance.grid.columnSet" as="grid.columnSet">
+            <arguments>
+               <argument name="filter_visibility" xsi:type="string">0</argument>
+            </arguments>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="customer.balance.grid.columnSet.amount" as="amount">
+               <arguments>
+                  <argument name="header" translate="true" xsi:type="string">Balance</argument>
+                  <argument name="sortable" xsi:type="string">0</argument>
+                  <argument name="width" xsi:type="string">50</argument>
+                  <argument name="renderer" xsi:type="string">Magento\CustomerBalance\Block\Adminhtml\Widget\Grid\Column\Renderer\Currency</argument>
+                  <argument name="index" xsi:type="string">amount</argument>
+               </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column\Multistore" name="customer.balance.grid.columnSet.website_id" as="website_id">
+               <arguments>
+                  <argument name="header" translate="true" xsi:type="string">Website</argument>
+                  <argument name="index" xsi:type="string">website_id</argument>
+                  <argument name="type" xsi:type="string">options</argument>
+                  <argument name="options" model="Magento\Config\Model\Config\Source\Website\OptionHash" xsi:type="options"/>
+                  <argument name="sortable" xsi:type="string">0</argument>
+               </arguments>
+            </block>
+         </block>
+      </block>
+   </referenceBlock>
+</body>
+<update handle="adminhtml_customer_balance_grid"/>
+<container name="root" label="Root">
+   <block class="Magento\CustomerBalance\Block\Adminhtml\Customer\Edit\Tab\Customerbalance\Balance" name="customerbalance.balance" template="Magento_CustomerBalance::balance.phtml"/>
+   <block class="Magento\CustomerBalance\Block\Adminhtml\Customer\Edit\Tab\Customerbalance\Form" name="customerbalance.form">
+      <arguments>
+         <argument name="target_form" xsi:type="string">customer_form</argument>
+      </arguments>
+   </block>
+   <block class="Magento\CustomerBalance\Block\Adminhtml\Customer\Edit\Tab\Customerbalance\Balance\History" name="customerbalance.history"/>
+</container>

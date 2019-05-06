@@ -1,0 +1,1 @@
+/var/www/html/magento230/vendor/magento/module-multiple-wishlist/view/frontend/web/js/view/multiple-wishlist.js
