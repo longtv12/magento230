@@ -1,0 +1,1 @@
+/var/www/html/magento230/vendor/magento/module-visual-merchandiser/view/adminhtml/web/js/mass_sku.js
